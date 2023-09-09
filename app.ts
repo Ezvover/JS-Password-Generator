@@ -6,7 +6,6 @@ let digitsAmount = document.getElementById('digitsAmount') as HTMLInputElement;
 let generateButton = document.getElementById('generateButton') as HTMLInputElement;
 let outputLabel = document.getElementById('outputLabel') as HTMLInputElement;
 
-
 function GenerateArray()
 {
     if (lettersOption.checked || numberOption.checked)
@@ -76,7 +75,7 @@ numberOption.addEventListener('change', function ()
 {
     if (numberOption.checked)
     {
-        digitsAmount.style.display = 'block';
+        digitsAmount.style.display = 'inline-block';
     }
     else
     {

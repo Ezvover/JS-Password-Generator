@@ -48,7 +48,7 @@ lettersOption.addEventListener('change', function () {
 });
 numberOption.addEventListener('change', function () {
     if (numberOption.checked) {
-        digitsAmount.style.display = 'block';
+        digitsAmount.style.display = 'inline-block';
     }
     else {
         digitsAmount.style.display = 'none';

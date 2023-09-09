@@ -32,7 +32,7 @@ function GeneratePassword() {
         return answer;
     }
     catch (_a) {
-        alert("Вы не выбрали ни одну из опций");
+        alert("You didn't select one of the options");
     }
 }
 lettersOption.addEventListener('change', function () {

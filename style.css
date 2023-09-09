@@ -1,0 +1,32 @@
+body
+{
+    background-color: mediumpurple;
+    font-weight: bold;
+}
+
+main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 94vh;
+}
+
+form
+{
+    text-align: center;
+}
+
+.checkbox
+{
+    margin: 50px;
+}
+
+.rectangle
+{
+    width: 100%;
+    padding: 20px;
+    height: 18px;
+    background-color: aliceblue;
+    border-radius: 25px;
+}

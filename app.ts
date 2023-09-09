@@ -47,12 +47,11 @@ function GeneratePassword()
             answer += symbolsArr[Math.floor(Math.random() * symbolsArr.length)];
         }
 
-        console.log(answer);
         return answer;
     }
     catch
     {
-        alert("Вы не выбрали ни одну из опций");
+        alert("You didn't select one of the options");
     }
 
 }
@@ -63,11 +62,11 @@ lettersOption.addEventListener('change', function()
     {
         upperCaseOption.disabled = false;
         lowerCaseOption.disabled = false;
+
+        lowerCaseOption.checked = true;
     }
     else
     {
-        upperCaseOption.checked = false;
-        lowerCaseOption.checked = false;
         upperCaseOption.disabled = true;
         lowerCaseOption.disabled = true;
     }

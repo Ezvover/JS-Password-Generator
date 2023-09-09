@@ -5,7 +5,7 @@ var numberOption = document.getElementById('numberOption');
 var digitsAmount = document.getElementById('digitsAmount');
 var generateButton = document.getElementById('generateButton');
 var outputLabel = document.getElementById('outputLabel');
-function GenereteArray() {
+function GenerateArray() {
     if (lettersOption.checked || numberOption.checked) {
         var symbolsArr = [];
         if (lettersOption.checked) {
@@ -24,12 +24,11 @@ function GenereteArray() {
 }
 function GeneratePassword() {
     try {
-        var symbolsArr = GenereteArray();
+        var symbolsArr = GenerateArray();
         var answer = "";
         while (answer.length <= parseInt(digitsAmount.value)) {
             answer += symbolsArr[Math.floor(Math.random() * symbolsArr.length)];
         }
-        console.log(answer);
         return answer;
     }
     catch (_a) {
@@ -40,10 +39,9 @@ lettersOption.addEventListener('change', function () {
     if (lettersOption.checked) {
         upperCaseOption.disabled = false;
         lowerCaseOption.disabled = false;
+        lowerCaseOption.checked = true;
     }
     else {
-        upperCaseOption.checked = false;
-        lowerCaseOption.checked = false;
         upperCaseOption.disabled = true;
         lowerCaseOption.disabled = true;
     }

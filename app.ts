@@ -43,7 +43,7 @@ function GeneratePassword()
 
         while (answer.length <= parseInt(digitsAmount.value))
         {
-            answer += symbolsArr[Math.floor(Math.random() * symbolsArr.length)];
+            answer += symbolsArr[Math.floor(Math.random() * symbolsArr.length - 1)];
         }
 
         return answer;

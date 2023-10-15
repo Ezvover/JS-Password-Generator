@@ -1,16 +1,17 @@
-let lettersOption = document.getElementById('lettersOption') as HTMLInputElement;
-let upperCaseOption = document.getElementById('upperCaseOption') as HTMLInputElement;
-let lowerCaseOption = document.getElementById('lowerCaseOption') as HTMLInputElement;
-let numberOption = document.getElementById('numberOption') as HTMLInputElement;
-let digitsAmount = document.getElementById('digitsAmount') as HTMLInputElement;
-let generateButton = document.getElementById('generateButton') as HTMLInputElement;
-let outputLabel = document.getElementById('outputLabel') as HTMLInputElement;
+let lettersOption : HTMLInputElement = document.getElementById('lettersOption') as HTMLInputElement;
+let upperCaseOption : HTMLInputElement = document.getElementById('upperCaseOption') as HTMLInputElement;
+let lowerCaseOption : HTMLInputElement = document.getElementById('lowerCaseOption') as HTMLInputElement;
+let numberOption : HTMLInputElement = document.getElementById('numberOption') as HTMLInputElement;
+let digitsAmount : HTMLInputElement = document.getElementById('digitsAmount') as HTMLInputElement;
+let generateButton : HTMLInputElement = document.getElementById('generateButton') as HTMLInputElement;
+let outputLabel : HTMLInputElement = document.getElementById('outputLabel') as HTMLInputElement;
 
 function GenerateArray()
 {
     if (lettersOption.checked || numberOption.checked)
     {
-        let symbolsArr : any[] = [];
+        type arr = number | string;
+        let symbolsArr : arr[] = [];
         if (lettersOption.checked)
         {
             if (lowerCaseOption.checked)
@@ -41,9 +42,9 @@ function GeneratePassword()
         let symbolsArr = GenerateArray();
         let answer : string = "";
 
-        while (answer.length <= parseInt(digitsAmount.value))
+        while (answer.length <= parseInt(digitsAmount.value) - 1)
         {
-            answer += symbolsArr[Math.floor(Math.random() * symbolsArr.length - 1)];
+            answer += symbolsArr[Math.floor(Math.random() * symbolsArr.length)];
         }
 
         return answer;
@@ -61,25 +62,18 @@ lettersOption.addEventListener('change', function()
     {
         upperCaseOption.disabled = false;
         lowerCaseOption.disabled = false;
-
         lowerCaseOption.checked = true;
+        upperCaseOption.parentElement.style.color = '';
+        lowerCaseOption.parentElement.style.color = '';
     }
     else
     {
         upperCaseOption.disabled = true;
         lowerCaseOption.disabled = true;
-    }
-});
-
-numberOption.addEventListener('change', function ()
-{
-    if (numberOption.checked)
-    {
-        digitsAmount.style.display = 'inline-block';
-    }
-    else
-    {
-        digitsAmount.style.display = 'none';
+        upperCaseOption.checked = false;
+        lowerCaseOption.checked = false;
+        upperCaseOption.parentElement.style.color = 'gray';
+        lowerCaseOption.parentElement.style.color = 'gray';
     }
 });
 

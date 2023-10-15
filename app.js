@@ -7,7 +7,7 @@ var generateButton = document.getElementById('generateButton');
 var outputLabel = document.getElementById('outputLabel');
 function GenerateArray() {
     if (lettersOption.checked || numberOption.checked) {
-        var symbolsArr = []; //var
+        var symbolsArr = [];
         if (lettersOption.checked) {
             if (lowerCaseOption.checked) {
                 symbolsArr.push('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
@@ -26,7 +26,7 @@ function GeneratePassword() {
     try {
         var symbolsArr = GenerateArray();
         var answer = "";
-        while (answer.length <= parseInt(digitsAmount.value)) {
+        while (answer.length <= parseInt(digitsAmount.value) - 1) {
             answer += symbolsArr[Math.floor(Math.random() * symbolsArr.length)];
         }
         return answer;
@@ -40,18 +40,16 @@ lettersOption.addEventListener('change', function () {
         upperCaseOption.disabled = false;
         lowerCaseOption.disabled = false;
         lowerCaseOption.checked = true;
+        upperCaseOption.parentElement.style.color = '';
+        lowerCaseOption.parentElement.style.color = '';
     }
     else {
         upperCaseOption.disabled = true;
         lowerCaseOption.disabled = true;
-    }
-});
-numberOption.addEventListener('change', function () {
-    if (numberOption.checked) {
-        digitsAmount.style.display = 'inline-block';
-    }
-    else {
-        digitsAmount.style.display = 'none';
+        upperCaseOption.checked = false;
+        lowerCaseOption.checked = false;
+        upperCaseOption.parentElement.style.color = 'gray';
+        lowerCaseOption.parentElement.style.color = 'gray';
     }
 });
 generateButton.addEventListener('click', function (event) {

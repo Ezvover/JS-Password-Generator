@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<main> <!-- ahahahahahah eto comment -->
+<main>
     <form>
-        <h1 style="padding-bottom: 50px">Generate your password</h1>
+        <h1>Generate your password</h1>
 
         <div class="rectangle">
             <label id="outputLabel"></label>
@@ -16,29 +16,26 @@
 
         <div class="checkbox">
             <input type="checkbox" id="lettersOption" checked>
-            <label for="lettersOption">Letters</label>
+            <label for="lettersOption" class="checkbox-label">Letters</label>
         </div>
 
         <div class="checkbox">
             <input type="checkbox" id="upperCaseOption">
-            <label for="upperCaseOption">Upper Cases</label>
+            <label for="upperCaseOption" class="checkbox-label">Upper Cases</label>
         </div>
 
         <div class="checkbox">
             <input type="checkbox" id="lowerCaseOption" checked>
-            <label for="lowerCaseOption">Lower Cases</label>
+            <label for="lowerCaseOption" class="checkbox-label">Lower Cases</label>
         </div>
 
         <div class="checkbox">
             <input type="checkbox" id="numberOption" checked>
-            <label for="numberOption">Numbers</label>
+            <label for="numberOption" class="checkbox-label">Numbers</label>
         </div>
-
-
-
         <div class="checkbox">
-            <label for="digitsAmount"></label>
-            <input type="number" id="digitsAmount" min="4" max="50" step="1" value="8">
+            <label for="digitsAmount" id="digitsLabel" class="checkbox-label">Digits Amount:  </label>
+            <input type="number" id="digitsAmount" min="4" max="20" step="1" value="8">
         </div>
 
         <button id="generateButton">

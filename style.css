@@ -1,32 +1,97 @@
-body
-{
-    background-color: mediumpurple;
-    font-weight: bold;
+@font-face {
+    font-family: "Gilroy-bold";
+    font-style: normal;
+    font-weight: normal;
+    src: url(./fonts/Gilroy-Bold.ttf);
 }
 
-main
-{
+body {
+    font-family: "Gilroy-bold", serif;
+    background-color: aliceblue;
+    font-weight: bold;
+    margin: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 94vh;
 }
 
-form
-{
+main {
     text-align: center;
 }
 
-.checkbox
-{
-    margin: 50px;
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
-.rectangle
-{
-    width: 100%;
+.checkbox {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #999;
+    border-radius: 3px;
+    outline: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    border-color: dodgerblue;
+    background-color: dodgerblue;
+}
+
+.checkbox input[type="number"] {
+    border: none;
+    font-family: Gilroy-bold, serif; /* Замените на желаемый шрифт */
+    padding: 5px;
+}
+
+#digitsAmount {
+    margin-left: 10px;
+}
+
+.rectangle {
+    width: 70%;
     padding: 20px;
     height: 18px;
     background-color: aliceblue;
+    font-size: 20px;
     border-radius: 25px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+button:hover {
+    background: #af2cff;
 }

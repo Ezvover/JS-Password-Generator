@@ -69,6 +69,10 @@ input[type="checkbox"]:checked {
     margin-left: 10px;
 }
 
+#outputLabel{
+    
+}
+
 .rectangle {
     width: 70%;
     padding: 20px;
@@ -78,6 +82,9 @@ input[type="checkbox"]:checked {
     border-radius: 25px;
     margin: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items:center;
+    justify-content: center;
 }
 
 button {

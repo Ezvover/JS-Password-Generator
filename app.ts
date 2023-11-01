@@ -2,6 +2,7 @@ let lettersOption : HTMLInputElement = document.getElementById('lettersOption') 
 let upperCaseOption : HTMLInputElement = document.getElementById('upperCaseOption') as HTMLInputElement;
 let lowerCaseOption : HTMLInputElement = document.getElementById('lowerCaseOption') as HTMLInputElement;
 let numberOption : HTMLInputElement = document.getElementById('numberOption') as HTMLInputElement;
+let symbolOption : HTMLInputElement = document.getElementById('symbolOption') as HTMLInputElement;
 let digitsAmount : HTMLInputElement = document.getElementById('digitsAmount') as HTMLInputElement;
 let generateButton : HTMLInputElement = document.getElementById('generateButton') as HTMLInputElement;
 let outputLabel : HTMLInputElement = document.getElementById('outputLabel') as HTMLInputElement;
@@ -18,16 +19,25 @@ function GenerateArray()
             {
                 symbolsArr.push('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
             }
-
             if (upperCaseOption.checked)
             {
                 symbolsArr.push('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+            }
+            if (upperCaseOption.checked == false && lowerCaseOption.checked == false)
+            {
+                symbolsArr.push('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+                symbolsArr.push('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
             }
         }
 
         if (numberOption.checked)
         {
             symbolsArr.push('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+        }
+        
+        if (symbolOption.checked)
+        {
+            symbolsArr.push('!', '@', '#', '$', '%', '&', '?', '*', '-', '+');
         }
 
         return symbolsArr;
